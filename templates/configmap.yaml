@@ -4,11 +4,6 @@ metadata:
   name: nodejs-template-env
   namespace: nodejs-template1
 data:
-  {{- $env := .Files.Get "files/.env" }}
-  {{- range $line := (splitList "\n" $env) }}
-    {{- with $vals := splitList "=" $line }}
-      {{- if eq (len $vals) 2 }}
-        {{ index $vals 0 }}: {{ index $vals 1 }}
-      {{- end }}
-    {{- end }}
-  {{- end }}
+  host: "172.16.2.10"
+  user: "docker"
+  password: "00000000"
