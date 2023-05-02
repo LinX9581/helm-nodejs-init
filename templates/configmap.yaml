@@ -4,6 +4,6 @@ metadata:
   name: nodejs-template-env
   namespace: nodejs-template1
 data:
-  host: "172.16.2.10"
-  user: "docker"
-  password: "00000000"
+  db_host: "172.16.2.10"
+  db_user: "docker"
+  db_password: "00000000"
