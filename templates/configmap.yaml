@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nodejs-template-env
+  namespace: nodejs-template1
+data:
+  {{- $env := .Files.Get "files/.env" }}
+  {{- range $line := (split "\n" $env) }}
+    {{- with $vals := split "=" $line }}
+      {{- if eq (len $vals) 2 }}
+        {{ index $vals 0 }}: {{ index $vals 1 }}
+      {{- end }}
+    {{- end }}
+  {{- end }}
