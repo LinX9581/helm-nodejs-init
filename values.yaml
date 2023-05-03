@@ -1,4 +1,4 @@
-replicaCount: 2
+replicaCount: 3
 
 image:
   repository: asia.gcr.io/nownews-analytics/nodejs-template
